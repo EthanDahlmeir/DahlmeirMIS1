@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Home — Maroon & Gold</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="wrap">
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><span class="brand">Ethan Dahlmeir</span></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="hobbies.html">Hobbies</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                      <li><a href="resume.htm">Resume</a></li>
+                      <li><a href="career.html">Career Interest</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+
+            <!-- Homepage now shows the E. Dahlmeir resume content -->
+            <header class="resume-header">
+                <div style="display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap;">
+                    <img id="profilePhoto" src="images/ethan1.jpg" alt="Ethan Dahlmeir" class="profile-photo" onerror="this.onerror=null; this.src='images/placeholder_headshot.svg';">
+                    <!-- Upload control for owner to set a local profile photo (stored in the browser) -->
+                    <div style="margin-left:12px;display:flex;gap:8px;align-items:center;">
+                        <label for="photoUpload" style="cursor:pointer;color:var(--muted);font-size:0.9rem;">
+                            <input id="photoUpload" type="file" accept="image/*" style="display:none">
+                            <span style="padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.02);">Upload headshot</span>
+                        </label>
+                        <button id="saveHeadshot" style="padding:6px 10px;border-radius:8px;background:rgba(212,175,55,0.12);border:none;color:var(--gold);cursor:pointer;">Save headshot</button>
+                        <button id="clearHeadshot" style="padding:6px 10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);cursor:pointer;">Clear</button>
+                    </div>
+                    <div>
+                        <h1 style="margin:0; color:var(--gold);">Ethan Dahlmeir</h1>
+                        <div class="contact">Sophomore, University of Minnesota Duluth — Finance (expected 2028) • D1 Hockey Goaltender</div>
+                        <div style="margin-top:0.5rem; color:var(--muted);">Email: <a href="mailto:edahlmeir@gmail.com" style="color:var(--gold);">edahlmeir@gmail.com</a> • LinkedIn: <a href="https://www.linkedin.com/in/ethan-dahlmeir" target="_blank" rel="noopener" style="color:var(--gold);">Ethan Dahlmeir</a></div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <section class="section">
+                    <h2 style="color:var(--gold);">Summary</h2>
+                    <p class="lead">I'm Ethan Dahlmeir, a sophomore at the University of Minnesota Duluth studying Finance and a dedicated D1 hockey goaltender who balances athletics and academics with discipline and enthusiasm. I enjoy hanging out with friends, fishing, and pushing my limits in hockey—those experiences shape my teamwork, leadership, and competitive drive.</p>
+                </section>
+
+                <section class="section">
+                    <h2 style="color:var(--gold);">Education</h2>
+                    <p><strong>University of Minnesota Duluth</strong> — B.S. Finance (expected 2028)</p>
+                    <p style="color:var(--muted);">Relevant coursework: Corporate Finance, Investments, Financial Accounting, Statistics</p>
+                </section>
+
+                <section class="section">
+                    <h2 style="color:var(--gold);">Experience</h2>
+                    <article>
+                        <h3 style="margin:0; color:var(--gold);">Retail Associate — Cub Foods (2019–2022)</h3>
+                        <p style="color:var(--muted);">Customer service, stocking, and point-of-sale responsibilities; learned strong communication and time-management skills while balancing school and athletic commitments.</p>
+                    </article>
+                </section>
+
+                <section class="section">
+                    <h2 style="color:var(--gold);">Athletics & Hobbies</h2>
+                    <div class="hobby-grid">
+                        <div style="flex:1; min-width:220px;">
+                            <h3 style="color:var(--gold); margin-bottom:0.25rem;">Hockey</h3>
+                            <p style="color:var(--muted);">As a D1 goaltender, I commit significant time to training, video review, and team work. The high-paced environment taught me to stay calm under pressure and to communicate clearly with teammates and coaches. I travel regularly for games and value the discipline hockey brings to my life.</p>
+                        </div>
+                        <div style="flex:1; min-width:220px;">
+                            <h3 style="color:var(--gold); margin-bottom:0.25rem;">Fishing</h3>
+                            <p style="color:var(--muted);">Fishing is my go-to for downtime — early mornings on the lake help me recharge and keep perspective. I enjoy the patience and planning it takes, and I often use these quiet moments to reflect and set goals.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 style="color:var(--gold);">Skills</h2>
+                    <ul style="color:var(--muted);">
+                        <li>Teamwork & Communication</li>
+                        <li>Leadership (team captain-like responsibilities)</li>
+                        <li>Financial Modeling & Excel</li>
+                        <li>Time Management & Prioritization</li>
+                        <li>Adaptability under pressure</li>
+                    </ul>
+                </section>
+
+                  <section class="section">
+                            <h2 style="color:var(--gold);">Looking for finance projects?</h2>
+                            <p style="color:var(--muted);">I've included selected finance projects and fictional firm case studies on the <a href="career.html" style="color:var(--gold);">Career Interest</a> page.</p>
+                        </section>
+            </main>
+
+            <footer>
+                <p>&copy; <span id="year">2025</span> Ethan Dahlmeir. All rights reserved.</p>
+            </footer>
+        </div>
+
+        <script>
+            // Year
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Safe CTA handler (only if present)
+            const cta = document.getElementById('cta');
+            if (cta) {
+                cta.addEventListener('click', function(e){
+                    e.preventDefault();
+                    cta.style.transform = 'translateY(-3px) scale(0.995)';
+                    setTimeout(()=> cta.style.transform = '', 250);
+                    const t = document.createElement('div');
+                    t.textContent = 'Thanks — let\'s get started!';
+                    t.style.position = 'fixed';
+                    t.style.left = '50%';
+                    t.style.bottom = '36px';
+                    t.style.transform = 'translateX(-50%)';
+                    t.style.background = 'rgba(0,0,0,0.7)';
+                    t.style.color = '#fff';
+                    t.style.padding = '0.6rem 1rem';
+                    t.style.borderRadius = '8px';
+                    t.style.zIndex = 9999;
+                    document.body.appendChild(t);
+                    setTimeout(()=> t.remove(), 1800);
+                });
+            }
+
+                // Load uploaded photo from localStorage (if any). Do not auto-load local files — upload to set.
+                (function(){
+                    const img = document.getElementById('profilePhoto');
+                    if (!img) return;
+                    try{
+                        const stored = localStorage.getItem('profilePhotoDataURL');
+                        if (stored) img.src = stored;
+                    }catch(e){ /* ignore storage errors */ }
+                })();
+
+            // Upload handler: stores selected image in localStorage and updates the profile photo
+            (function(){
+                const upload = document.getElementById('photoUpload');
+                const img = document.getElementById('profilePhoto');
+                const saveBtn = document.getElementById('saveHeadshot');
+                const clearBtn = document.getElementById('clearHeadshot');
+                if (!upload || !img) return;
+
+                function enableControls(enabled){
+                    if (saveBtn) saveBtn.disabled = !enabled;
+                    if (clearBtn) clearBtn.disabled = !enabled;
+                }
+
+                // initialize controls state
+                try{ enableControls(!!localStorage.getItem('profilePhotoDataURL')); }catch(e){ enableControls(false); }
+
+                upload.addEventListener('change', function(e){
+                    const file = upload.files && upload.files[0];
+                    if (!file) return;
+                    if (!file.type.startsWith('image/')) return alert('Please pick an image file');
+                    const reader = new FileReader();
+                    reader.onload = function(){
+                        try{
+                            localStorage.setItem('profilePhotoDataURL', reader.result);
+                            enableControls(true);
+                        }catch(err){
+                            console.warn('Could not save to localStorage', err);
+                            enableControls(false);
+                        }
+                        img.src = reader.result;
+                    };
+                    reader.readAsDataURL(file);
+                });
+
+                // Save button downloads the currently shown data URL as a file so you can place it into the images folder
+                if (saveBtn){
+                    saveBtn.addEventListener('click', function(){
+                        const src = (localStorage.getItem && localStorage.getItem('profilePhotoDataURL')) || img.src;
+                        if (!src) return alert('No uploaded photo to save.');
+                        // If src is not a data URL, open in new tab so user can save manually
+                        if (!src.startsWith('data:')){
+                            window.open(src, '_blank');
+                            // Do not clear stored upload — keep the image persisting across reloads
+                            return;
+                        }
+                        const a = document.createElement('a');
+                        a.href = src;
+                        a.download = 'ethan1.jpg';
+                        document.body.appendChild(a);
+                        a.click();
+                        a.remove();
+
+                        // small toast to confirm action (image remains uploaded and will persist)
+                        const t = document.createElement('div');
+                        t.textContent = 'Saved to downloads — copy ethan1.jpg into images/ to make it permanent. The uploaded image remains on the homepage.';
+                        t.style.position = 'fixed';
+                        t.style.left = '50%';
+                        t.style.bottom = '36px';
+                        t.style.transform = 'translateX(-50%)';
+                        t.style.background = 'rgba(0,0,0,0.8)';
+                        t.style.color = '#fff';
+                        t.style.padding = '0.6rem 1rem';
+                        t.style.borderRadius = '8px';
+                        t.style.zIndex = 9999;
+                        document.body.appendChild(t);
+                        setTimeout(()=> t.remove(), 2800);
+                    });
+                }
+
+                // Clear button removes localStorage and restores placeholder
+                if (clearBtn){
+                    clearBtn.addEventListener('click', function(){
+                        try{ localStorage.removeItem('profilePhotoDataURL'); }catch(e){}
+                        img.src = 'images/placeholder_headshot.svg';
+                        enableControls(false);
+                    });
+                }
+            })();
+        </script>
+    </body>
+</html>
+

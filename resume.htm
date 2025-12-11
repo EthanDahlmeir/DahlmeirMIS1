@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Ethan Dahlmeir — Resume</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            /* small page-specific tweaks to use existing maroon/gold theme */
+            .resume-header { margin: 2rem 0; text-align:left; }
+            .contact { margin-top: 0.5rem; color: var(--muted); }
+            .section { margin: 2rem 0; }
+            .hobby-grid { display: flex; gap: 1rem; flex-wrap: wrap; }
+            .profile-photo { width: 160px; height: 160px; border-radius: 8px; object-fit: cover; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><span class="brand">E. Dahlmeir</span></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="hobbies.html">Hobbies</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="resume.htm">Resume</a></li>
+                    <li><a href="career.html">Career Interest</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+
+            <header class="resume-header">
+                <div style="display:flex;gap:1.25rem;align-items:center;">
+                    <img src="images/ethan1.jpg" alt="Ethan Dahlmeir" class="profile-photo" onerror="this.style.display='none'">
+                    <div>
+                        <h1 style="margin:0; color:var(--gold);">Ethan Dahlmeir</h1>
+                        <div class="contact">Sophomore, University of Minnesota Duluth — Finance (expected 2028) • D1 Hockey Goaltender</div>
+                        <div style="margin-top:0.5rem; color:var(--muted);">Email: <a href="mailto:edahlmeir@gmail.com" style="color:var(--gold);">edahlmeir@gmail.com</a> • LinkedIn: <a href="https://www.linkedin.com/in/ethan-dahlmeir" target="_blank" rel="noopener" style="color:var(--gold);">Ethan Dahlmeir</a></div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <section class="section">
+                    <h2 style="color:var(--gold);">Summary</h2>
+                    <p class="lead">I'm Ethan Dahlmeir, a sophomore at the University of Minnesota Duluth studying Finance and a dedicated D1 hockey goaltender who balances athletics and academics with discipline and enthusiasm. I enjoy hanging out with friends, fishing, and pushing my limits in hockey—those experiences shape my teamwork, leadership, and competitive drive.</p>
+                </section>
+
+                <section class="section">
+                    <h2 style="color:var(--gold);">Education</h2>
+                    <p><strong>University of Minnesota Duluth</strong> — B.S. Finance (expected 2028)</p>
+                    <p style="color:var(--muted);">Relevant coursework: Corporate Finance, Investments, Financial Accounting, Statistics</p>
+                </section>
+
+                <section class="section">
+                    <h2 style="color:var(--gold);">Experience</h2>
+                    <article>
+                        <h3 style="margin:0; color:var(--gold);">Retail Associate — Cub Foods (2019–2022)</h3>
+                        <p style="color:var(--muted);">Customer service, stocking, and point-of-sale responsibilities; learned strong communication and time-management skills while balancing school and athletic commitments.</p>
+                    </article>
+                </section>
+
+                <section class="section">
+                    <h2 style="color:var(--gold);">Athletics & Hobbies</h2>
+                    <div class="hobby-grid">
+                        <div style="flex:1; min-width:220px;">
+                            <h3 style="color:var(--gold); margin-bottom:0.25rem;">Hockey</h3>
+                            <p style="color:var(--muted);">As a D1 goaltender, I commit significant time to training, video review, and team work. The high-paced environment taught me to stay calm under pressure and to communicate clearly with teammates and coaches. I travel regularly for games and value the discipline hockey brings to my life.</p>
+                        </div>
+                        <div style="flex:1; min-width:220px;">
+                            <h3 style="color:var(--gold); margin-bottom:0.25rem;">Fishing</h3>
+                            <p style="color:var(--muted);">Fishing is my go-to for downtime — early mornings on the lake help me recharge and keep perspective. I enjoy the patience and planning it takes, and I often use these quiet moments to reflect and set goals.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 style="color:var(--gold);">Skills</h2>
+                    <ul style="color:var(--muted);">
+                        <li>Teamwork & Communication</li>
+                        <li>Leadership (team captain-like responsibilities)</li>
+                        <li>Financial Modeling & Excel</li>
+                        <li>Time Management & Prioritization</li>
+                        <li>Adaptability under pressure</li>
+                    </ul>
+                </section>
+
+                <!-- Finance projects moved to Career page -->
+                <section class="section">
+                    <h2 style="color:var(--gold);">Looking for finance projects?</h2>
+                    <p style="color:var(--muted);">I've included selected finance projects and fictional firm case studies on the <a href="career.html" style="color:var(--gold);">Career Interest</a> page.</p>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; <span id="year">2025</span> Ethan Dahlmeir • <a href="mailto:edahlmeir@gmail.com" style="color:var(--gold);">edahlmeir@gmail.com</a></p>
+            </footer>
+        </div>
+
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </body>
+</html>

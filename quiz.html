@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quick Quiz — Ethan's Site</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .quiz-wrap{max-width:760px;margin:3rem auto;padding:2rem;background:rgba(255,255,255,0.02);border-radius:12px;border:1px solid rgba(212,175,55,0.06)}
+    .question{margin-bottom:1.25rem;color:var(--muted)}
+    .answers button{display:block;margin:0.4rem 0;padding:0.6rem 0.9rem;border-radius:8px;border:none;background:rgba(255,255,255,0.03);color:var(--text-light);cursor:pointer}
+    .answers button.selected{background:rgba(212,175,55,0.15);color:var(--gold)}
+    .results{margin-top:1rem;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><span class="brand">E. Dahlmeir</span></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.htm">Resume</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+    </nav>
+
+    <main class="quiz-wrap">
+      <h1 style="color:var(--gold);margin-top:0;">Quick Quiz</h1>
+      <p style="color:var(--muted);">A short 5-question quiz — see how well you know hockey & finance.</p>
+
+      <div id="quiz"></div>
+
+      <div style="margin-top:1.25rem;">
+        <button class="btn" id="submit">Submit Answers</button>
+        <button class="btn" id="reset" style="background:transparent;color:var(--muted);box-shadow:none;margin-left:0.5rem;">Reset</button>
+      </div>
+
+      <div id="results" class="results" aria-live="polite"></div>
+    </main>
+  </div>
+
+  <script>
+    const questions = [
+      { q: 'What position does Ethan play?', a: ['Forward','Defense','Goaltender','Center'], correct: 2 },
+      { q: 'Which university does Ethan attend?', a: ['UMN Twin Cities','UMD','Ohio State','Michigan State'], correct: 1 },
+      { q: 'In finance, what does DCF stand for?', a: ['Discounted Cash Flow','Direct Cash Fund','Deferred Cash Flow','Debt Coverage Factor'], correct: 0 },
+      { q: 'A typical hockey game has how many players on the ice per team (excluding goalie)?', a: ['5','6','4','3'], correct: 0 },
+      { q: 'Which skill is NOT listed on Ethan\'s resume?', a: ['Teamwork','Leadership','Financial Modeling','Graphic Design'], correct: 3 }
+    ];
+
+    const quizEl = document.getElementById('quiz');
+    const resultsEl = document.getElementById('results');
+
+    function renderQuiz(){
+      quizEl.innerHTML = '';
+      questions.forEach((item, idx)=>{
+        const qDiv = document.createElement('div'); qDiv.className='question';
+        const qTitle = document.createElement('h3'); qTitle.textContent = (idx+1)+'. '+item.q; qTitle.style.margin='0 0 0.4rem 0'; qDiv.appendChild(qTitle);
+        const answers = document.createElement('div'); answers.className='answers';
+        item.a.forEach((opt, i)=>{
+          const btn = document.createElement('button'); btn.type='button'; btn.textContent = opt; btn.dataset.q = idx; btn.dataset.a = i;
+          btn.addEventListener('click', ()=>{
+            // clear other buttons for this question
+            answers.querySelectorAll('button').forEach(b=>b.classList.remove('selected'));
+            btn.classList.add('selected');
+          });
+          answers.appendChild(btn);
+        });
+        qDiv.appendChild(answers);
+        quizEl.appendChild(qDiv);
+      });
+    }
+
+    document.getElementById('submit').addEventListener('click', ()=>{
+      const selected = Array.from(document.querySelectorAll('.answers')).map((ans, i)=>{
+        const s = ans.querySelector('button.selected');
+        return s ? Number(s.dataset.a) : null;
+      });
+      let score = 0; const total = questions.length; let missing = false;
+      selected.forEach((s, i)=>{ if(s===null) missing=true; if(s===questions[i].correct) score++; });
+      if(missing){ resultsEl.textContent = `You missed some questions. Score so far: ${score}/${total}. Please answer all questions.`; return; }
+      resultsEl.textContent = `You scored ${score} out of ${total}.`;
+      // small congratulatory shimmer
+      if(score===total) resultsEl.textContent += ' Perfect! Nice work.';
+    });
+
+    document.getElementById('reset').addEventListener('click', ()=>{ renderQuiz(); resultsEl.textContent=''; });
+
+    renderQuiz();
+  </script>
+</body>
+</html>
